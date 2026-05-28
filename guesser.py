@@ -5,10 +5,6 @@ MAX_NUMBER  = 100
 MAX_TRIES   = 7   
 
 def play_game():
-    """
-    Runs one full round of the guessing game.
-    Returns True if the player won, False if they ran out of tries.
-    """
 
     secret_number = random.randint(MIN_NUMBER, MAX_NUMBER)
 
@@ -28,13 +24,13 @@ def play_game():
         raw_input_value = input("  Enter your guess: ").strip()
 
         if not raw_input_value.isdigit():
-            print("  ⚠️  Invalid input! Please enter a whole number.\n")
+            print(" Invalid input! Please enter a whole number.\n")
             continue 
 
         guess = int(raw_input_value)
 
         if guess < MIN_NUMBER or guess > MAX_NUMBER:
-            print(f"  ⚠️  Please enter a number between {MIN_NUMBER} and {MAX_NUMBER}.\n")
+            print(f" Please enter a number between {MIN_NUMBER} and {MAX_NUMBER}.\n")
             continue  
 
         attempts += 1
@@ -53,18 +49,13 @@ def play_game():
             print("=" * 50)
             return True   
     print("\n" + "=" * 50)
-    print(f"  😞 Game over!  You've used all {MAX_TRIES} attempts.")
+    print(f" Game over!  You've used all {MAX_TRIES} attempts.")
     print(f"  The secret number was {secret_number}.")
     print("=" * 50)
     return False   
 
 
 def ask_play_again():
-    """
-    Asks the player whether they want to play another round.
-    Keeps asking until the player enters Y or N (case-insensitive).
-    Returns True to play again, False to quit.
-    """
     while True:
         answer = input("\n  Would you like to play again? (Y/N): ").strip().upper()
         if answer == "Y":
@@ -85,9 +76,9 @@ while True:
     else:
         total_losses += 1
 
-    print(f"\n  📊 Score  →  Wins: {total_wins}  |  Losses: {total_losses}")
+    print(f"\n  Score  →  Wins: {total_wins}  |  Losses: {total_losses}")
 
     if not ask_play_again():
         break
 
-print("\n  Thanks for playing!  See you next time. 👋\n")
+print("\n  Thanks for playing!  See ya.\n")
