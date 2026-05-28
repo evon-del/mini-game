@@ -15,7 +15,7 @@
 
 8.You will be asked if you want to play again. Type Y for Yes or N for No.
 
-#Configuration
+# Configuration
 You can easily adjust the game difficulty by modifying the constants at the top of the script:
 
 - MIN_NUMBER: The lowest possible secret number (default: 1)
